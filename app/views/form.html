@@ -1,0 +1,32 @@
+<ng-form name="form">
+
+  <div class="row">
+    <label for="nombre">Nombre: </label>
+    <input type="text" name="nombre" id="nombre" ng-model="vm.nombre" required>
+  </div>
+
+  <div ng-show="vm.nombre" class="row">
+    <label for="genero">Genero: </label>
+    <select name="genero" id="genero" ng-model="vm.genero">
+      <option value="">Seleccione</option>
+      <option value="M">Masculino</option>
+      <option value="F">Femenino</option>
+    </select>
+  </div>
+
+  <div ng-hide="!vm.genero" class="row">
+    <label for="dPreferido">Deporte preferido: </label>
+    <select name="dPreferido" id="dPreferido" ng-model="vm.dPreferido">
+      <option value="">Seleccione</option>
+      <option ng-repeat="item in vm.listDPreferido" value={{item.value}}>{{item.name}}</option>
+    </select>
+  </div>
+
+  <div ng-if="vm.dPreferido==='tenis' " class="row">
+    <label for="jugadoresTop">Tus dos jugadores top: </label>
+    <div class="checkbox" id="jugadoresTop" ng-repeat="item in vm.listJugadoresTop">
+      <label><input type="checkbox" ng-model="vm.jugadoresTop[item.name]">{{item.name}}</label>
+    </div>
+  </div>
+
+</ng-form>

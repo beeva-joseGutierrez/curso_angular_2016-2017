@@ -26,9 +26,9 @@ var moduleAngular = angular.module('cursoAngular20162017App', [
       .when('/form', {
         templateUrl: 'views/form.html',
         controller: 'FormCtrl',
-        controllerAs: 'form'
+        controllerAs: 'vm'
       })
       .otherwise({
         redirectTo: '/inicio'
-      });      
+      });
   }]);

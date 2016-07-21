@@ -1,13 +1,18 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name cursoAngular20162017App.controller:AboutCtrl
- * @description
- * # AboutCtrl
- * Controller of the cursoAngular20162017App
- */
-moduleAngular
-  .controller('FormCtrl', ['$scope', function ($scope) {
+(function() {
 
-  }]);
+  class FormCtrl {
+
+    constructor($http, $location) {
+      this.listDPreferido = [{value: 'futbol', name: 'Fútbol'}, {value: 'basket', name: 'Baloncesto'}, {value: 'tenis', name: 'Tenis'}];
+
+      this.listJugadoresTop = [{name: 'Federer'}, {name: 'Djokovic'}, {name: 'Nadal'}, {name: 'Murray'}];
+    }
+
+  }
+
+  moduleAngular
+  .controller('FormCtrl', ['$http','$location', FormCtrl]);
+
+})();
