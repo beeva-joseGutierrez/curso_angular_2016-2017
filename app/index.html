@@ -1,6 +1,6 @@
 <!doctype html>
 <html>
-  <head>    
+  <head>
     <meta charset="utf-8">
     <title>Curso básico de Angular 2016-2017</title>
     <meta name="description" content="">
@@ -33,7 +33,7 @@
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
-              <span class="icon-bar"></span>              
+              <span class="icon-bar"></span>
             </button>
 
             <a class="navbar-brand" href="/#">Curso Angular 2016-2017</a>
@@ -43,7 +43,7 @@
 
             <ul class="nav navbar-nav">
               <li class="active"><a ng-href="/#/inicio">Presentación</a></li>
-              <li><a ng-href="/#/form">Parte práctica</a></li>              
+              <li><a ng-href="/#/form">Parte práctica</a></li>
             </ul>
           </div>
         </div>
@@ -85,12 +85,16 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <!-- endbower -->
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/form.js"></script>
+        <script src="scripts/components/modal/modal.module.js"></script>
+        <script src="scripts/components/modal/modal.service.js"></script>
+        <script src="scripts/components/modal/modalInstance.controller.js"></script>
         <!-- endbuild -->
 </body>
 </html>

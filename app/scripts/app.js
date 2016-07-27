@@ -9,12 +9,14 @@
  * Main module of the application.
  */
 var moduleAngular = angular.module('cursoAngular20162017App', [
+    'cursoAngular20162017App.modal',
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.bootstrap'
   ])
   .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
     $routeProvider

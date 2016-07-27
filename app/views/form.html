@@ -1,32 +1,36 @@
-<ng-form name="form">
+<ng-form name="formName">
 
   <div class="row">
     <label for="nombre">Nombre: </label>
-    <input type="text" name="nombre" id="nombre" ng-model="vm.nombre" required>
+    <input type="text" name="nombre" id="nombre" ng-model="vm.form.nombre" required>
   </div>
 
-  <div ng-show="vm.nombre" class="row">
+  <div ng-show="vm.form.nombre" class="row">
     <label for="genero">Genero: </label>
-    <select name="genero" id="genero" ng-model="vm.genero">
+    <select name="genero" id="genero" ng-model="vm.form.genero">
       <option value="">Seleccione</option>
       <option value="M">Masculino</option>
       <option value="F">Femenino</option>
     </select>
   </div>
 
-  <div ng-hide="!vm.genero" class="row">
+  <div ng-hide="!vm.form.genero" class="row">
     <label for="dPreferido">Deporte preferido: </label>
-    <select name="dPreferido" id="dPreferido" ng-model="vm.dPreferido">
+    <select name="dPreferido" id="dPreferido" ng-model="vm.form.dPreferido">
       <option value="">Seleccione</option>
       <option ng-repeat="item in vm.listDPreferido" value={{item.value}}>{{item.name}}</option>
     </select>
   </div>
 
-  <div ng-if="vm.dPreferido==='tenis' " class="row">
+  <div ng-if="vm.form.dPreferido==='tenis' " class="row">
     <label for="jugadoresTop">Tus dos jugadores top: </label>
     <div class="checkbox" id="jugadoresTop" ng-repeat="item in vm.listJugadoresTop">
-      <label><input type="checkbox" ng-model="vm.jugadoresTop[item.name]">{{item.name}}</label>
+      <label><input type="checkbox" ng-model="vm.form.jugadoresTop[item.name]">{{item.name}}</label>
     </div>
+  </div>
+
+  <div ng-if="vm.form.jugadoresTop['Nadal'] === true" class="row">
+    <button ng-click="vm.showMessage('Enhorabuena!')">Superado!</button>
   </div>
 
 </ng-form>

@@ -4,15 +4,25 @@
 
   class FormCtrl {
 
-    constructor($http, $location) {
+    constructor(Modal) {
       this.listDPreferido = [{value: 'futbol', name: 'Fútbol'}, {value: 'basket', name: 'Baloncesto'}, {value: 'tenis', name: 'Tenis'}];
 
       this.listJugadoresTop = [{name: 'Federer'}, {name: 'Djokovic'}, {name: 'Nadal'}, {name: 'Murray'}];
+
+      this.Modal = Modal;
+    }
+
+    showMessage(message) {
+      for(let i in this.form) {
+        delete this.form[i];
+      }
+
+      this.Modal.alert(message);
     }
 
   }
 
   moduleAngular
-  .controller('FormCtrl', ['$http','$location', FormCtrl]);
+  .controller('FormCtrl', FormCtrl);
 
 })();
